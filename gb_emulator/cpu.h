@@ -1,8 +1,21 @@
-﻿// CMakeProject1.h : Include file for standard system include files,
-// or project specific include files.
+﻿// cpu.h :
 
 #pragma once
 
-#include <iostream>
 
-// TODO: Reference additional headers your program requires here.
+class CPU
+{
+private:
+    /* data */
+public:
+    CPU(/* args */);
+    ~CPU();
+};
+
+CPU::CPU(/* args */)
+{
+}
+
+CPU::~CPU()
+{
+}
