@@ -19,7 +19,7 @@ void get_file_size_bytes(const char * filename){
     }
 }
 
-void load_rom(const char * filename){
+unsigned char * load_rom(const char * filename, int64_t * rom_size){
     std::cout << filename << std::endl;
     std::ifstream rom_file (filename, ios::in | ios::binary);
     if (rom_file){
@@ -28,6 +28,10 @@ void load_rom(const char * filename){
         const int64_t length = rom_file.tellg();
         rom_file.seekg (0, rom_file.beg);
 
+        // set length to var accessible from main
+        *rom_size = length;
+
+        // Read file with mostly C things
         std::cout << "Start read file with C things" << std::endl;
         unsigned char * buffer = new unsigned char [length];
         FILE *ptr;
@@ -38,6 +42,8 @@ void load_rom(const char * filename){
         std::cout << "End" << std::endl;
 
 
+
+        // Read file the "C++ way"
         char * rom = new char [length];
         std::cout << "Reading " << length << " characters... ";
 
@@ -54,5 +60,8 @@ void load_rom(const char * filename){
         // ...buffer contains the entire file...
 
         delete[] rom;
+
+        return(buffer);
+        delete[] buffer;
     }
 }
