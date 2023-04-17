@@ -1,6 +1,7 @@
 // main.cpp : Defines the entry point for the application.
 
 #include "cartridge_reader.cpp"
+#include "cpu.cpp"
 #include <iostream>
 #include <windows.h>
 using std::cout;
