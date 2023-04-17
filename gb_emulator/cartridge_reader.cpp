@@ -36,11 +36,7 @@ unsigned char * load_rom(const char * filename, int64_t * rom_size){
         unsigned char * buffer = new unsigned char [length];
         FILE *ptr;
         ptr = fopen(filename,"rb");  // r for read, b for binary
-        fread(buffer,1,length,ptr); // read 10 bytes to our buffer
-        for(int64_t i = 0; i<length; i++)
-            printf("%u ", buffer[i]); // prints a series of bytes
-        std::cout << "End" << std::endl;
-
+        fread(buffer,1,length,ptr); // read all bytes from file into buffer
 
 
         // Read file the "C++ way"

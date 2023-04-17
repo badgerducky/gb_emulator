@@ -19,9 +19,11 @@ int main()
 	int64_t rom_size = 0; // store size of rom, after getting passed to load_rom function
 
 	get_file_size_bytes("..\\..\\gb_emulator\\gb_emulator\\tests\\input.bin");
-	unsigned char * rom_file = load_rom("..\\..\\gb_emulator\\gb_emulator\\tests\\input.bin", &rom_size);
+	unsigned char * rom = load_rom("..\\..\\gb_emulator\\gb_emulator\\tests\\input.bin", &rom_size);
 
-	cout << "rom file: " << rom_file << endl;
+	cout << "rom file: " << rom << endl;
 	cout << "rom size: " << rom_size << endl;
+
+	get_first_byte(rom, rom_size);
 	return 0;
 }

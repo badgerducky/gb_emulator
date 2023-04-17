@@ -3,6 +3,11 @@
 #pragma once
 
 #include <stdint.h>
+#include <iostream>
+#include <fstream>
+using std::cout;
+using std::endl;
+using std::ios;
 
 
 class CPU
