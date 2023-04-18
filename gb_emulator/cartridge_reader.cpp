@@ -58,6 +58,5 @@ unsigned char * load_rom(const char * filename, int64_t * rom_size){
         delete[] rom;
 
         return(buffer);
-        delete[] buffer;
     }
 }

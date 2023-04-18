@@ -24,6 +24,6 @@ int main()
 	cout << "rom file: " << rom << endl;
 	cout << "rom size: " << rom_size << endl;
 
-	get_first_byte(rom, rom_size);
+	get_byte(rom, 1);
 	return 0;
 }

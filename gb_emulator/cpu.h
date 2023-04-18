@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <iostream>
 #include <fstream>
+#include <bitset>
 using std::cout;
 using std::endl;
 using std::ios;

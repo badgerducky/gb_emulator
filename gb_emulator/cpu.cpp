@@ -2,8 +2,10 @@
 
 #include "cpu.h"
 
-void get_first_byte(unsigned char * buffer, int64_t rom_size){
-    for(int64_t i = 0; i<1; i++)
-        printf("%u ", buffer[i]); // prints a byte
+void get_byte(unsigned char * buffer, int64_t index){
+    printf("%u ", buffer[index]); // prints a byte
+    //create a bitset var for a byte
+    std::bitset<8> byte(buffer[index]);
+    cout << byte << endl;
     std::cout << "End" << std::endl;
 }
