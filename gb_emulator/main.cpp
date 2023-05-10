@@ -22,12 +22,6 @@ int main()
 
 	cout << "rom size: " << rom_size << endl;
 
-	for (int64_t i = 0; i < rom_size; i++)
-	{
-		// printf("%u ", rom[i]);
-		cout << "byte number " << i << ": " << rom[i] << endl;
-	}
-
 	get_instruction(rom, 1);
 	return 0;
 }

@@ -2,10 +2,20 @@
 
 #include "cpu.h"
 
-void get_instruction(unsigned char * rom, int64_t index){
+void get_instruction(unsigned char *rom, int64_t index)
+{
     printf("%u ", rom[index]); // prints a byte
-    //create a bitset var for a byte
-    std::bitset<8> byte(rom[index]);
-    cout << byte << endl;
-    std::cout << "End" << std::endl;
+
+    switch (rom[index])
+    {
+    case 0x00:
+        std::cout << "00" << std::endl;
+        break;
+    case 0x01:
+        std::cout << "01" << std::endl;
+        break;
+    case 0xff:
+        std::cout << "FF" << std::endl;
+        break;
+    }
 }
