@@ -13,12 +13,13 @@ int main()
 	// Get current directory
 	cout << "Current Directory: " << current_path() << endl
 		 << endl;
+	const char *RELATIVE_PATH = "gb_emulator/tests/input.bin";
 
-	int64_t rom_size = 0; // store size of rom, after getting passed to load_rom function
-	rom_size = get_file_size_bytes("gb_emulator/tests/input.bin");
+	int64_t rom_size = 0;
+	rom_size = get_file_size_bytes(RELATIVE_PATH);
 
-	unsigned char *rom = new unsigned char[rom_size]; // store contents of rom after load_rom function
-	load_rom("gb_emulator/tests/input.bin", &rom_size, rom);
+	unsigned char *rom = new unsigned char[rom_size];
+	load_rom(RELATIVE_PATH, &rom_size, rom);
 
 	cout << "rom size: " << rom_size << endl;
 
